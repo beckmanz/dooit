@@ -8,6 +8,8 @@ export default function MainLayout() {
       <Stack.Screen name="(auth)/signup/page" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)/signin/page" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)/preauth/page" options={{ headerShown: false }} />
+      <Stack.Screen name="(panel)/home/page" options={{ headerShown: false }} />
+      <Stack.Screen name="(panel)/newlist/page" options={{ headerShown: false }} />
     </Stack>
   )
 }
