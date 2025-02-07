@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 
 export default function index() {
     const handleNext = () => {
-        router.replace('/presign/page')
+        router.replace('/preauth/page')
     }
     return (
         <View style={styles.container}>
@@ -18,8 +18,8 @@ export default function index() {
                     </Svg>
                 </View>
                 <View style={styles.containerTexts}>
-                    <Text style={{ color: "#FFFFFF", fontSize: 41 }}>Dooit</Text>
-                    <Text style={{ color: "#C4C4C4", fontSize: 21, textAlign: "center" }}>Write what you need to do. Everyday.</Text>
+                    <Text style={{ color: colors.white, fontSize: 41 }}>Dooit</Text>
+                    <Text style={{ color: colors.grey, fontSize: 21, textAlign: "center" }}>Write what you need to do. Everyday.</Text>
                 </View>
             </View>
             <View style={styles.contentButton}>
