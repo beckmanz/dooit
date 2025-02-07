@@ -5,7 +5,7 @@ import { Input } from '../../../components/input/default'
 import Star from '../../../components/star/page'
 import { ButtonBlack } from '../../../components/button/black'
 import { Back } from '../../../components/button/back'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 import { router } from 'expo-router'
 
 export default function Signup() {
@@ -30,18 +30,22 @@ export default function Signup() {
             <View style={{ width: "100%", paddingHorizontal: 15 }}>
                 <Back />
             </View>
-            <View style={styles.content}>
-                <Star />
-                <View style={styles.containerTexts}>
-                    <Text style={{ color: colors.black, fontSize: 41, fontWeight: "bold" }}>Create account</Text>
-                </View>
-                <View style={styles.containerForm}>
-                    <Input name='Username' onValue={NameChange} />
-                    <Input name='Email Address' onValue={EmailChange} />
-                    <InputPassword onPassword={PasswordChange} />
-                    <ButtonBlack name='Create Account' onPress={CreateAccount} />
-                </View>
-            </View>
+            <SafeAreaView style={{ flex: 1 }}>
+                <ScrollView style={{ flex: 1 }}>
+                    <View style={styles.content}>
+                        <Star />
+                        <View style={styles.containerTexts}>
+                            <Text style={{ color: colors.black, fontSize: 41, fontWeight: "bold" }}>Create account</Text>
+                        </View>
+                        <View style={styles.containerForm}>
+                            <Input name='Username' onValue={NameChange} />
+                            <Input name='Email Address' onValue={EmailChange} />
+                            <InputPassword onPassword={PasswordChange} />
+                            <ButtonBlack name='Create Account' onPress={CreateAccount} />
+                        </View>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
         </View>
     )
 }
