@@ -2,8 +2,12 @@ import colors from '@/constants/colors'
 import React from 'react'
 import Svg, { Rect, Path } from 'react-native-svg';
 import { View, StyleSheet, Text, Pressable } from 'react-native'
+import { router } from 'expo-router';
 
 export default function index() {
+    const handleNext = () => {
+        router.replace('/presign/page')
+    }
     return (
         <View style={styles.container}>
             <View style={styles.content}>
@@ -19,7 +23,7 @@ export default function index() {
                 </View>
             </View>
             <View style={styles.contentButton}>
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} onPress={handleNext}>
                     <Text style={{ color: colors.black, fontSize: 20, textAlign: "center" }}>Continue</Text>
                 </Pressable>
             </View>
