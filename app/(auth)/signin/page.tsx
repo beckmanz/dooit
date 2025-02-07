@@ -12,7 +12,7 @@ export default function Signin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
 
-    const CreateAccount = () => {
+    const SignIn = () => {
 
     }
 
@@ -32,12 +32,12 @@ export default function Signin() {
                     <View style={styles.content}>
                         <Star />
                         <View style={styles.containerTexts}>
-                            <Text style={{ color: colors.black, fontSize: 41, fontWeight: "bold" }}>Create account</Text>
+                            <Text style={{ color: colors.black, fontSize: 41, fontWeight: "bold" }}>Sign In</Text>
                         </View>
                         <View style={styles.containerForm}>
                             <Input name='Email Address' onValue={EmailChange} />
                             <InputPassword onPassword={PasswordChange} />
-                            <ButtonBlack name='Create Account' onPress={CreateAccount} />
+                            <ButtonBlack name='Sign In' onPress={SignIn} />
                         </View>
                     </View>
                 </ScrollView>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     containerTexts: {
-        width: "80%",
+        width: "95%",
     },
     containerForm: {
         width: '100%',
