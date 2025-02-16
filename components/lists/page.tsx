@@ -22,7 +22,7 @@ export function TaskList({ activeTab }: TaskListProps) {
     const [taskLists, setTaskLists] = useState<any[]>([]);
     const [categories, setCategories] = useState<{ [key: number]: any }>({});
     const [tasks, setTasks] = useState<{ [key: number]: any[] }>({});
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetchTaskLists();
@@ -102,32 +102,10 @@ export function TaskList({ activeTab }: TaskListProps) {
         setTasks(tasksMap);
     };
 
-    const handleSubmit = async (list: { title: string, categoryId: number | null, isPinned: boolean }) => {
-        const newList = {
-            name: list.title,
-            pinned: list.isPinned,
-            category_id: list.categoryId,
-            user_id: user?.id
-        };
-
-        try {
-            const { data, error } = await supabase
-                .from('tasks_lists')
-                .insert([newList])
-                .select();
-
-            if (error) {
-                throw error;
-            }
-
-            if (data && data.length > 0) {
-                await fetchTaskLists();
-            }
-
-            setModalVisible(false);
-        } catch (error) {
-            console.error('Erro ao adicionar lista:', error);
-        }
+    const handleSubmit = async () => {
+        setLoading(true)
+        await fetchTaskLists();
+        setLoading(false)
     };
 
     if (loading) {
@@ -195,7 +173,7 @@ export function TaskList({ activeTab }: TaskListProps) {
                     <Ionicons name="add-circle" size={75} color="black" />
                 </TouchableOpacity>
             </View>
-            <NewListModal visible={modalVisible} onClose={() => setModalVisible(false)} />
+            <NewListModal visible={modalVisible} onClose={() => setModalVisible(false)} atualizar={handleSubmit} />
         </View>
     );
 }
