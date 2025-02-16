@@ -40,7 +40,7 @@ function MainLayout() {
       <Stack.Screen name="(panel)/home/page" options={{ headerShown: false }} />
       <Stack.Screen name="(panel)/search/page" options={{ headerShown: false }} />
       <Stack.Screen name="(panel)/pinned/page" options={{ headerShown: false }} />
-      <Stack.Screen name="(panel)/newlist/page" options={{ headerShown: false }} />
+      <Stack.Screen name="(panel)/list/page" options={{ headerShown: false }} />
     </Stack>
   )
 }
