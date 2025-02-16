@@ -10,9 +10,10 @@ import { useAuth } from '@/contexts/AuthContext';
 interface Props {
     visible: boolean;
     onClose: () => void;
+    atualizar: () => void;
 }
 
-export function NewListModal({ visible, onClose }: Props) {
+export function NewListModal({ visible, onClose, atualizar }: Props) {
     const { user } = useAuth();
     const [title, setTitle] = useState('');
     const [isPinned, setIsPinned] = useState(false);
@@ -80,7 +81,7 @@ export function NewListModal({ visible, onClose }: Props) {
         setIsPinned(false);
         setTitleError('')
         setCategoryError('')
-        window.location.reload();
+        atualizar()
         onClose();
     };
 
