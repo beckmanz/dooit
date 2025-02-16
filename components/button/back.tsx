@@ -4,9 +4,12 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { Pressable, View, Text, StyleSheet } from 'react-native'
 import { router } from 'expo-router';
 
-export function Back() {
+interface Props {
+    onPress: () => void;
+}
+export function Back({ onPress }: Props) {
     return (
-        <Pressable style={styles.button} onPress={() => router.back()}>
+        <Pressable style={styles.button} onPress={onPress}>
             <AntDesign name="arrowleft" size={40} color="black" />
         </Pressable>
     )

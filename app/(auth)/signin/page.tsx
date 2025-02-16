@@ -35,7 +35,7 @@ export default function Signin() {
     return (
         <View style={styles.container}>
             <View style={{ width: "100%", paddingHorizontal: 15 }}>
-                <Back />
+                <Back onPress={() => router.back()} />
             </View>
             <SafeAreaView style={{ flex: 1 }}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
