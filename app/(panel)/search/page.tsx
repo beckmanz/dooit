@@ -52,7 +52,7 @@ export default function page() {
         if (categoryIds.length === 0) return;
 
         const { data: categories, error } = await supabase
-            .from("category")
+            .from("categories")
             .select("*")
             .in("id", categoryIds);
 
